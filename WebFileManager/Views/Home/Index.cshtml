@@ -1,0 +1,35 @@
+﻿@using GleamTech.AspNet.Core
+@using GleamTech.FileUltimate.AspNet.UI
+
+<!DOCTYPE html>
+@{
+    var fileManager = new FileManager
+            {
+                Width = 1200,
+                Height = 800,
+                Resizable = true
+            };
+
+    var rootFolder = new FileManagerRootFolder
+            {
+                Name = "Shared Folder",
+                Location = ViewData["RootFolder"].ToString()
+            };
+
+    rootFolder.AccessControls.Add(new FileManagerAccessControl
+            {
+                Path = @"\",
+                AllowedPermissions = FileManagerPermissions.Full
+            });
+
+    fileManager.RootFolders.Add(rootFolder);
+}
+<html>
+<head>
+    <title>File Manager</title>
+    @this.RenderHead(fileManager)
+</head>
+<body>
+    @this.RenderBody(fileManager)
+</body>
+</html>
