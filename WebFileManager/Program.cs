@@ -3,10 +3,6 @@ using GleamTech.AspNet.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//Change Root Path from Appsettings.json
-var rootFolder = builder.Configuration.GetSection("RootFolder").Value;
-Console.WriteLine(rootFolder);
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
