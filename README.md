@@ -1,2 +1,2 @@
 # WebFileManager
-In Appsetting You change Root folder or Ip Address or Port
+In Appsetting you can change Root folder or Ip Address or Port
